@@ -1,19 +1,18 @@
 server:
-  port: 9191
-
+  port: 5051
 spring:
   application:
-    name:ind
+    name:insgatewayservices
   cloud:
     gateway:
       routes:
         - id: 
-          uri: lb://USER-SERVICE
+          uri: lb://CARTSERVICES
           predicates:
-            - Path=/users/**
-        - id: DEPARTMENT-SERVICE
-          uri: lb://DEPARTMENT-SERVICE
+            - Path=/cartservices/**
+        - id: CARTSERVICES
+          uri: lb://PRODUCTSERVICES
           predicates:
-            - Path=/departments/**
+            - Path=/productservices/**
          
 
