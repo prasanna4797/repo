@@ -1,0 +1,19 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name:ind
+  cloud:
+    gateway:
+      routes:
+        - id: 
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: DEPARTMENT-SERVICE
+          uri: lb://DEPARTMENT-SERVICE
+          predicates:
+            - Path=/departments/**
+         
+
