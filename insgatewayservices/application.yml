@@ -6,11 +6,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: 
+        - id: CARTSERVICES
           uri: lb://CARTSERVICES
           predicates:
             - Path=/cartservices/**
-        - id: CARTSERVICES
+        - id: PRODUCTSERVICES
           uri: lb://PRODUCTSERVICES
           predicates:
             - Path=/productservices/**
