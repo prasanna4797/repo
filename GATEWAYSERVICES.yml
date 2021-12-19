@@ -1,0 +1,22 @@
+zuul:
+  ignored-services: '*'
+  prefix: /insrestgateway
+  routes:
+    CARTSERVICES:
+      path: /cartservices/**
+      service-id: CARTSERVICES
+    PRODUCTSERVICES:
+      path: /productservices/**
+      service-id: PRODUCTSERVICES
+  host:
+    connect-timeout-millis: 5000
+    time-to-live: -1
+    max-per-route-connections: 10000
+    max-total-connections: 5000
+    socket-timeout-millis: 60000 
+    
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  eureka:
+    enabled: true
