@@ -8,6 +8,9 @@ zuul:
     PRODUCTSERVICES:
       path: /productservices/**
       service-id: PRODUCTSERVICES
+    CUSTOMERSERVICES:
+      path: /customerservices/**
+      service-id: CUSTOMERSERVICES
   host:
     connect-timeout-millis: 5000
     time-to-live: -1
