@@ -11,6 +11,9 @@ zuul:
     CUSTOMERSERVICES:
       path: /customerservices/**
       service-id: CUSTOMERSERVICES
+    ORDERSERVICES:
+      path: /orderservices/**
+      service-id: ORDERSERVICES
   host:
     connect-timeout-millis: 5000
     time-to-live: -1
