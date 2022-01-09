@@ -1,0 +1,35 @@
+hystrix:
+  threadpool:
+    default:
+      maxQueueSize: '3'
+      queueSizeRejectionThreshold: '3'
+      maximumSize: '3'
+      allowMaximumSizeToDivergeFromCoreSize: 'true'
+      coreSize: '2'
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: '3000'
+      circuitBreaker:
+        enabled: 'false'
+cartservices:
+  cacheManager:
+    cacheAdapter:
+      ttl:
+        minutes: '3'
+productservices:
+  getProductByProductOfferingID:
+    url: http://GATEWAYSERVICES/insrestgateway/productservices/productCatalogue/productByProductOfferingID/{productOfferingID}
+  getListOfProducts:
+    url: http://GATEWAYSERVICES/insrestgateway/productservices/productCatalogue/listOfProducts
+  getAllProduct:
+    url: http://PRODUCTSERVICES/productCatalogue/allProducts
+customerservices:
+  addCustomerData:
+    url: http://GATEWAYSERVICES/insrestgateway/customerservices/customer/addCustomer
+orderservices:
+  submitOrder:
+    url: http://GATEWAYSERVICES/insrestgateway/orderservices/order/createOrder
