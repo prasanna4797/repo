@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/msdb
+    password: ENC(qDcElxRhiQn8d5vn/KGfAnRLI0phlGY6)
+  servlet:
+    multipart:
+      enabled: 'true'
+      max-request-size: 500KB
+      max-file-size: 500KB
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+
