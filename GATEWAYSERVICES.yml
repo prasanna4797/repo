@@ -26,3 +26,6 @@ ribbon:
   ReadTimeout: 60000
   eureka:
     enabled: true
+eureka:
+    client:
+        fetch-registry: true
