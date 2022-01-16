@@ -1,31 +1,30 @@
 zuul:
-  ignored-services: '*'
+  host:
+    max-total-connections: '5000'
+    max-per-route-connections: '10000'
+    connect-timeout-millis: '5000'
+    socket-timeout-millis: '60000'
+    time-to-live: '-1'
   prefix: /insrestgateway
   routes:
-    CARTSERVICES:
-      path: /cartservices/**
-      service-id: CARTSERVICES
     PRODUCTSERVICES:
-      path: /productservices/**
       service-id: PRODUCTSERVICES
+      path: /productservices/**
+    ORDERSERVICES:
+      service-id: ORDERSERVICES
+      path: /orderservices/**
+    CARTSERVICES:
+      service-id: CARTSERVICES
+      path: /cartservices/**
     CUSTOMERSERVICES:
       path: /customerservices/**
       service-id: CUSTOMERSERVICES
-    ORDERSERVICES:
-      path: /orderservices/**
-      service-id: ORDERSERVICES
-  host:
-    connect-timeout-millis: 5000
-    time-to-live: -1
-    max-per-route-connections: 10000
-    max-total-connections: 5000
-    socket-timeout-millis: 60000 
-    
+  ignored-services: '*'
 ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
+  ConnectTimeout: '3000'
+  ReadTimeout: '60000'
   eureka:
     enabled: true
 eureka:
-    client:
-        fetch-registry: true
+  client:
+    fetch-registry: true
