@@ -6,14 +6,14 @@ spring:
     password: ENC(qDcElxRhiQn8d5vn/KGfAnRLI0phlGY6)
   servlet:
     multipart:
-      enabled: 'true'
+      enabled: true
       max-request-size: 500KB
       max-file-size: 500KB
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-    show-sql: 'true'
+    show-sql: true
     hibernate:
       ddl-auto: update
 
