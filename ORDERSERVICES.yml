@@ -11,4 +11,11 @@ spring:
     show-sql: 'true'
     hibernate:
       ddl-auto: update
-
+kafka:
+  bootstrap:
+    server:
+      url: localhost:9092
+  topic: customerInfo
+crmservices:
+  getCustomer:
+    url: http://GATEWAYSERVICES/insrestgateway/customerservices/customer/getCustomerByID
