@@ -9,4 +9,8 @@ eureka:
     eureka-connection-idle-timeout-seconds: 30
     eureka-server-connect-timeout-seconds: 5
     eureka-server-read-timeout-seconds: 8
+    
+ribbon:
+  eureka:
+    enabled: true
 
