@@ -20,8 +20,7 @@ zuul:
       path: /customerservices/**
       service-id: CUSTOMERSERVICES
   ignored-services: '*'
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
-  eureka:
-    enabled: true
+  ribbon:
+    eager-load:
+      enabled: true
+
