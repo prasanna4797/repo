@@ -14,8 +14,7 @@ ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
   eager-load:
-    clients:
-      - true
+       clients: true
   eureka:
     enabled: true
 
